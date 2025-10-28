@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const Calculadora = () => {
   const [form, setForm] = useState({
     potenciaPanelW: 400,
     cantidadPaneles: 8,
+    precioPanelUnitario: 180000,
     inversionCLP: 5000000,
+    precioInversor: 800000,
     tasaCLP: 15000,
     cantidadBaterias: 0,
-    estructuraJabalcon: 0,
+    estructuraCableado: 0,
     instalacionBase: 400000,
     pesoEnvio: 30,
     tipoTecho: 'tejaAsfalt',
@@ -31,17 +32,27 @@ const Calculadora = () => {
   };
 
   const calcular = () => {
-    const potencia = parseFloat(form.potenciaPanelW) * parseFloat(form.cantidadPaneles) / 1000;
-    const subsidio = form.subsidio === 'estd20' ? parseFloat(form.inversionCLP) * 0.2 : 0;
-    const recargo = form.metodoPago === 'Financiado' ? parseFloat(form.inversionCLP) * 0.1 : 0;
-    const envio = parseFloat(form.pesoEnvio) * 50;
+    const potencia = parseFloat(form.potenciaPanelW || 0) * parseFloat(form.cantidadPaneles || 0) / 1000;
+    const costoPaneles = parseFloat(form.cantidadPaneles || 0) * parseFloat(form.precioPanelUnitario || 0);
+    const costoInversor = parseFloat(form.precioInversor || 0);
+    const totalEquipos = costoPaneles + costoInversor + parseFloat(form.inversionCLP || 0);
+    const subsidio = form.subsidio === 'estd20' ? totalEquipos * 0.2 : 0;
+    const recargo = form.metodoPago === 'Financiado' ? totalEquipos * 0.1 : 0;
+    const envio = parseFloat(form.pesoEnvio || 0) * 50;
     const garantia = form.garantia === 'ext25a' ? 200000 : 0;
-    const iva = (parseFloat(form.inversionCLP) + parseFloat(form.instalacionBase) + envio + garantia) * 0.19;
-    const costos = parseFloat(form.inversionCLP) + parseFloat(form.instalacionBase) + envio + garantia + recargo;
+    const costoBaterias = parseFloat(form.cantidadBaterias || 0) * parseFloat(form.tasaCLP || 0);
+    const costoEstructura = parseFloat(form.estructuraCableado || 0);
+    const iva = (totalEquipos + parseFloat(form.instalacionBase || 0) + envio + garantia + costoBaterias + costoEstructura) * 0.19;
+    const costos = totalEquipos + parseFloat(form.instalacionBase || 0) + envio + garantia + recargo + costoBaterias + costoEstructura;
     const total = costos + iva - subsidio;
 
     setResultado({
       potencia: potencia.toFixed(2),
+      cantidadPaneles: form.cantidadPaneles,
+      costoPaneles: Math.round(costoPaneles),
+      costoInversor: Math.round(costoInversor),
+      costoBaterias: Math.round(costoBaterias),
+      costoEstructura: Math.round(costoEstructura),
       subsidio: Math.round(subsidio),
       recargo: Math.round(recargo),
       subsidioFinal: Math.round(subsidio),
@@ -60,10 +71,12 @@ const Calculadora = () => {
     setForm({
       potenciaPanelW: 400,
       cantidadPaneles: 8,
+      precioPanelUnitario: 180000,
       inversionCLP: 5000000,
+      precioInversor: 800000,
       tasaCLP: 15000,
       cantidadBaterias: 0,
-      estructuraJabalcon: 0,
+      estructuraCableado: 0,
       instalacionBase: 400000,
       pesoEnvio: 30,
       tipoTecho: 'tejaAsfalt',
@@ -93,50 +106,66 @@ const Calculadora = () => {
                 <h5 className="card-title mb-4">Formulario</h5>
                 
                 <div className="row mb-3">
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <label className="form-label">Potencia del panel (W)</label>
                     <input type="number" className="form-control" name="potenciaPanelW" value={form.potenciaPanelW} onChange={handleChange} />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <label className="form-label">Cantidad de paneles</label>
                     <input type="number" className="form-control" name="cantidadPaneles" value={form.cantidadPaneles} onChange={handleChange} />
+                  </div>
+                  <div className="col-md-4">
+                    <label className="form-label">Precio unitario (CLP)</label>
+                    <input type="number" className="form-control" name="precioPanelUnitario" value={form.precioPanelUnitario} onChange={handleChange} />
+                  </div>
+                </div>
+
+                {form.cantidadPaneles > 0 && form.precioPanelUnitario > 0 && (
+                  <div className="alert alert-info py-2 mb-3">
+                    <small>
+                      <strong>Total paneles:</strong> {form.cantidadPaneles} x ${parseInt(form.precioPanelUnitario).toLocaleString()} = ${(form.cantidadPaneles * form.precioPanelUnitario).toLocaleString()}
+                    </small>
+                  </div>
+                )}
+
+                <div className="row mb-3">
+                  <div className="col-md-6">
+                    <label className="form-label">Inversor (CLP)</label>
+                    <input type="number" className="form-control" name="precioInversor" value={form.precioInversor} onChange={handleChange} />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="form-label">Inversión adicional (CLP)</label>
+                    <input type="number" className="form-control" name="inversionCLP" value={form.inversionCLP} onChange={handleChange} />
                   </div>
                 </div>
 
                 <div className="row mb-3">
-                  <div className="col-md-6">
-                    <label className="form-label">Inversión (panel)</label>
-                    <input type="number" className="form-control" name="inversionCLP" value={form.inversionCLP} onChange={handleChange} />
-                  </div>
                   <div className="col-md-6">
                     <label className="form-label">Batería (precio unidad)</label>
                     <input type="number" className="form-control" name="tasaCLP" value={form.tasaCLP} onChange={handleChange} />
                   </div>
-                </div>
-
-                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Cantidad baterías</label>
                     <input type="number" className="form-control" name="cantidadBaterias" value={form.cantidadBaterias} onChange={handleChange} />
                   </div>
-                  <div className="col-md-6">
-                    <label className="form-label">Estruc/Jabalcon</label>
-                    <input type="number" className="form-control" name="estructuraJabalcon" value={form.estructuraJabalcon} onChange={handleChange} />
-                  </div>
                 </div>
 
                 <div className="row mb-3">
+                  <div className="col-md-6">
+                    <label className="form-label">Estructura/Cableado</label>
+                    <input type="number" className="form-control" name="estructuraCableado" value={form.estructuraCableado} onChange={handleChange} />
+                  </div>
                   <div className="col-md-6">
                     <label className="form-label">Instalación base</label>
                     <input type="number" className="form-control" name="instalacionBase" value={form.instalacionBase} onChange={handleChange} />
                   </div>
+                </div>
+
+                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Peso envío (kg)</label>
                     <input type="number" className="form-control" name="pesoEnvio" value={form.pesoEnvio} onChange={handleChange} />
                   </div>
-                </div>
-
-                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Tipo de techo</label>
                     <select className="form-select" name="tipoTecho" value={form.tipoTecho} onChange={handleChange}>
@@ -144,6 +173,9 @@ const Calculadora = () => {
                       <option value="metalico">Metálico (+5%)</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Región</label>
                     <select className="form-select" name="region" value={form.region} onChange={handleChange}>
@@ -151,9 +183,6 @@ const Calculadora = () => {
                       <option value="V">V Región</option>
                     </select>
                   </div>
-                </div>
-
-                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Complejidad instalación</label>
                     <select className="form-select" name="complejidad" value={form.complejidad} onChange={handleChange}>
@@ -161,6 +190,9 @@ const Calculadora = () => {
                       <option value="media">Media (+10%)</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Subsidio</label>
                     <select className="form-select" name="subsidio" value={form.subsidio} onChange={handleChange}>
@@ -168,16 +200,16 @@ const Calculadora = () => {
                       <option value="estd20">Est. 20% (-20%)</option>
                     </select>
                   </div>
-                </div>
-
-                <div className="row mb-3">
                   <div className="col-md-6">
-                    <label className="form-label">Método de envío</label>
+                    <label className="form-label">Método de pago</label>
                     <select className="form-select" name="metodoPago" value={form.metodoPago} onChange={handleChange}>
                       <option value="contado">Contado (0%)</option>
                       <option value="Financiado">Financiado (+10%)</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Garantía</label>
                     <select className="form-select" name="garantia" value={form.garantia} onChange={handleChange}>
@@ -185,9 +217,6 @@ const Calculadora = () => {
                       <option value="ext25a">12 meses (+2%)</option>
                     </select>
                   </div>
-                </div>
-
-                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Plan de pago</label>
                     <select className="form-select" name="planPago" value={form.planPago} onChange={handleChange}>
@@ -195,6 +224,9 @@ const Calculadora = () => {
                       <option value="cuotas">En cuotas</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label">Tipo de pie</label>
                     <select className="form-select" name="tipoPie" value={form.tipoPie} onChange={handleChange}>
@@ -202,12 +234,11 @@ const Calculadora = () => {
                       <option value="monto">Monto fijo</option>
                     </select>
                   </div>
-                </div>
-
-                <div className="mb-3">
-                  <label className="form-label">Valor de pie</label>
-                  <input type="number" className="form-control" name="valorPie" value={form.valorPie} onChange={handleChange} />
-                  <small className="form-text text-muted">% o porcentaje (0-100)</small>
+                  <div className="col-md-6">
+                    <label className="form-label">Valor de pie</label>
+                    <input type="number" className="form-control" name="valorPie" value={form.valorPie} onChange={handleChange} />
+                    <small className="form-text text-muted">% o porcentaje (0-100)</small>
+                  </div>
                 </div>
 
                 <div className="d-flex gap-2">
@@ -230,9 +261,25 @@ const Calculadora = () => {
                       <strong>{resultado.potencia}</strong>
                     </div>
                     <div className="d-flex justify-content-between border-bottom py-2">
-                      <span>Subtotal equipos</span>
-                      <strong>${resultado.subsidio.toLocaleString()}</strong>
+                      <span>Paneles solares ({resultado.cantidadPaneles} uni.)</span>
+                      <strong>${resultado.costoPaneles.toLocaleString()}</strong>
                     </div>
+                    <div className="d-flex justify-content-between border-bottom py-2">
+                      <span>Inversor</span>
+                      <strong>${resultado.costoInversor.toLocaleString()}</strong>
+                    </div>
+                    {resultado.costoBaterias > 0 && (
+                      <div className="d-flex justify-content-between border-bottom py-2">
+                        <span>Baterías</span>
+                        <strong>${resultado.costoBaterias.toLocaleString()}</strong>
+                      </div>
+                    )}
+                    {resultado.costoEstructura > 0 && (
+                      <div className="d-flex justify-content-between border-bottom py-2">
+                        <span>Estructura/Jabalcón</span>
+                        <strong>${resultado.costoEstructura.toLocaleString()}</strong>
+                      </div>
+                    )}
                     <div className="d-flex justify-content-between border-bottom py-2">
                       <span>Recargo techo</span>
                       <strong>${resultado.recargo.toLocaleString()}</strong>
@@ -276,9 +323,6 @@ const Calculadora = () => {
                     <div className="d-flex justify-content-between py-3 bg-light mt-3 px-3 rounded">
                       <span className="fw-bold">Total final</span>
                       <strong className="text-primary fs-5">${resultado.total.toLocaleString()}</strong>
-                    </div>
-                    <div className="alert alert-warning mt-3 mb-0">
-                      Valores referenciales para tu presupuesto
                     </div>
                   </div>
                 ) : (
