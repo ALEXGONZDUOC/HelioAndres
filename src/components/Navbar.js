@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
@@ -13,7 +14,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item"><a className="nav-link" href="#inicio">Inicio</a></li>
             <li className="nav-item"><a className="nav-link" href="#servicios">Servicios</a></li>
             <li className="nav-item"><a className="nav-link" href="#soluciones">Soluciones</a></li>
@@ -22,6 +23,9 @@ const Navbar = () => {
             <li className="nav-item"><a className="nav-link" href="#testimonios">Testimonios</a></li>
             <li className="nav-item"><a className="nav-link" href="#faq">FAQ</a></li>
             <li className="nav-item"><a className="nav-link" href="#contacto">Contacto</a></li>
+            <li className="nav-item ms-lg-3">
+              <Link to="/login" className="btn btn-outline-primary btn-sm">Admin Login</Link>
+            </li>
           </ul>
         </div>
       </div>

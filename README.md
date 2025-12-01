@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Helioandes Solar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based web application for Helioandes Solar. It likely serves as a platform to showcase solar energy solutions, manage customer interactions, and potentially provide administrative functionalities.
+
+## Features
+
+Based on the project structure, the application includes:
+
+*   **User Interface Components**:
+    *   `Hero`: Main introductory section.
+    *   `Home`: Landing page or main content area.
+    *   `Navbar`: Navigation bar.
+    *   `Footer`: Application footer.
+    *   `Planes`: Section detailing solar plans/packages.
+    *   `Servicios`: Information about services offered.
+    *   `Soluciones`: Details on solar solutions.
+    *   `Testimonios`: Customer testimonials.
+    *   `Calculadora`: A calculator utility (possibly for solar savings/costs).
+    *   `Contacto`: Contact form or information.
+    *   `FAQ`: Frequently asked questions.
+*   **Authentication**:
+    *   `Login`: User login functionality.
+    *   `ProtectedRoute`: Ensures only authenticated users can access certain routes.
+    *   `AuthContext`: Manages authentication state across the application.
+*   **Admin Panel**:
+    *   `AdminDashboard`: Overview for administrators.
+    *   `AdminPlanes`: Management of solar plans.
+    *   `AdminServicios`: Management of services.
+    *   `AdminVendedores`: Management of sales personnel.
+    *   `AdminSidebar`: Navigation for the admin section.
+    *   `AdminLayout`: Layout for the admin interface.
+
+## Technologies Used
+
+*   **React**: A JavaScript library for building user interfaces.
+*   **Create React App**: Used for setting up the development environment.
+*   (Potentially other libraries like React Router for navigation, context API for state management, etc.)
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Make sure you have Node.js and npm (Node Package Manager) installed.
+
+*   [Node.js (includes npm)](https://nodejs.org/en/)
+
+### Installation
+
+1.  **Clone the repository**:
+    ```bash
+    git clone <repository_url>
+    cd helioandes-solar
+    ```
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+### Running the application
+
+To run the application in development mode:
+
+```bash
+npm start
+```
+
+This will open the application in your browser at [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+*   `src/`: Contains the main source code.
+    *   `components/`: Reusable UI components.
+    *   `context/`: React context providers (e.g., AuthContext).
+    *   `data/`: Local data storage or mock data (e.g., db.js).
+    *   `layouts/`: Layout components (e.g., AdminLayout).
+    *   Other files: Main application logic, styling, and entry points (`App.js`, `index.js`, `App.css`, `index.css`).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+*   `npm start`: Runs the app in the development mode.
+*   `npm test`: Launches the test runner.
+*   `npm run build`: Builds the app for production.
+*   `npm run eject`: Ejects from Create React App configuration (use with caution).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more details, refer to the Create React App documentation.

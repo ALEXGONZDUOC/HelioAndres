@@ -1,31 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { servicios } from '../data/db';
 
 const Servicios = () => {
-  const servicios = [
-    {
-      icon: '📊',
-      title: 'Estudio energético',
-      description: 'Análisis de consumo y propuesta acorde a tu perfil'
-    },
-    {
-      icon: '✓',
-      title: 'Instalación certificada',
-      description: 'Ejecutada por personal capacitado y certificado'
-    },
-    {
-      icon: '📈',
-      title: 'Monitoreo',
-      description: 'Seguimiento de rendimiento y alertas preventivas'
-    },
-    {
-      icon: '🔧',
-      title: 'Mantención',
-      description: 'Planes periódicos para maximizar vida útil del sistema'
-    }
-  ];
-
   return (
     <section id="servicios" className="py-5">
       <div className="container">
@@ -34,13 +11,16 @@ const Servicios = () => {
           Estudio energético, instalación certificada, monitoreo y mantención
         </p>
         <div className="row g-4">
-          {servicios.map((servicio, idx) => (
-            <div key={idx} className="col-md-6 col-lg-3">
+          {servicios.map((servicio) => (
+            <div key={servicio.id} className="col-md-6 col-lg-3">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body text-center">
-                  <div className="mb-3" style={{fontSize: '40px'}}>{servicio.icon}</div>
-                  <h5 className="card-title">{servicio.title}</h5>
-                  <p className="card-text text-muted">{servicio.description}</p>
+                  <div className="mb-3" style={{fontSize: '40px'}}>
+                    {/* Placeholder for icon, assuming Font Awesome will be added */}
+                    <i className={`fas ${servicio.icono}`}></i>
+                  </div>
+                  <h5 className="card-title">{servicio.nombre}</h5>
+                  <p className="card-text text-muted">{servicio.descripcion}</p>
                 </div>
               </div>
             </div>

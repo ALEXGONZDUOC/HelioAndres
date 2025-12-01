@@ -1,31 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Servicios from './components/Servicios';
-import Soluciones from './components/Soluciones';
-import Calculadora from './components/Calculadora';
-import Planes from './components/Planes';
-import Testimonios from './components/Testimonios';
-import FAQ from './components/FAQ';
-import Contacto from './components/Contacto';
-import Footer from './components/Footer';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import Home from './components/Home';
+import AdminLayout from './layouts/AdminLayout';
+import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 
+// A small component to handle the login logic
+const LoginPage = () => {
+  const { login } = useAuth();
+  return <Login onLogin={login} />;
+};
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Servicios />
-      <Soluciones />
-      <Calculadora />
-      <Planes />
-      <Testimonios />
-      <FAQ />
-      <Contacto />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <Routes>
+          <Route path="/*" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route 
+            path="/admin/*" 
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            } 
+          />
+        </Routes>
+      </div>
+    </AuthProvider>
   );
 };
 
