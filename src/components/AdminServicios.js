@@ -1,8 +1,40 @@
-import React from 'react';
-import { servicios } from '../data/db';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 const AdminServicios = () => {
+  const [servicios, setServicios] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchServicios = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/servicios');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setServicios(data);
+        } else {
+          throw new Error("La data recibida no es un array");
+        }
+      } catch (error){
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchServicios();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center py-5">Cargando servicios...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-5 text-danger">Error: {error.message}</div>;
+  }
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">

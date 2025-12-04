@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import { vendedores } from '../data/db';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -92,6 +91,40 @@ const VendedorCard = ({ vendedor }) => {
 };
 
 const AdminVendedores = () => {
+  const [vendedores, setVendedores] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchVendedores = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/vendedores');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setVendedores(data);
+        } else {
+          throw new Error("La data recibida no es un array");
+        }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVendedores();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center py-5">Cargando vendedores...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-5 text-danger">Error: {error.message}</div>;
+  }
   return (
     <div>
       <h3 className="mb-4">Rendimiento de Vendedores</h3>

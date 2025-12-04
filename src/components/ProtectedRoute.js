@@ -6,8 +6,6 @@ const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    // Redirect them to the /login page, but save the current location they were
-    // trying to go to. This is optional and a good UX practice.
     return <Navigate to="/login" replace />;
   }
 

@@ -87,3 +87,7 @@ In the project directory, you can run:
 *   `npm run eject`: Ejects from Create React App configuration (use with caution).
 
 For more details, refer to the Create React App documentation.
+
+## Latest Update
+
+**December 4, 2025**: Minor README update.

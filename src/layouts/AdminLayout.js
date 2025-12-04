@@ -10,7 +10,7 @@ const AdminLayout = () => {
   return (
     <div className="d-flex" style={{ minHeight: '100vh' }}>
       <AdminSidebar />
-      <main className="container-fluid p-4" style={{ backgroundColor: '#f4f6f9' }}>
+      <main className="container-fluid p-4" style={{ backgroundColor: '#f4f6f9', marginLeft: '280px' }}>
         <Routes>
           <Route path="servicios" element={<AdminServicios />} />
           <Route path="planes" element={<AdminPlanes />} />

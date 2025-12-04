@@ -23,7 +23,7 @@ const AdminSidebar = () => {
   };
 
   return (
-    <div className="d-flex flex-column vh-100 p-3 text-white bg-dark" style={{ width: '280px' }}>
+    <div className="d-flex flex-column p-3 text-white bg-dark" style={{ width: '280px', position: 'fixed', top: 0, bottom: 0, left: 0, overflowY: 'auto' }}>
       <a href="/admin" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span className="fs-4">HelioAndes Admin</span>
       </a>
