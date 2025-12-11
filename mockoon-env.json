@@ -17,7 +17,7 @@
       "responses": [
         {
           "uuid": "a552dab7-5ea7-4525-89c1-3576e0d0f4d0",
-          "body": "[\r\n  {\r\n    \"id\": 10,\r\n    \"nombre\": \"Instalación Residencial\",\r\n    \"descripcion\": \"Sistema solar completo para hogares, incluyendo evaluación, instalación y puesta en marcha.\",\r\n    \"icono\": \"solar-home\",\r\n    \"proyectos\": 12840,\r\n    \"eficiencia\": \"Alta\"\r\n  },\r\n  {\r\n    \"id\": 20,\r\n    \"nombre\": \"Mantenimiento Preventivo\",\r\n    \"descripcion\": \"Revisión periódica del sistema fotovoltaico para asegurar máximo rendimiento.\",\r\n    \"icono\": \"solar-wrench\",\r\n    \"proyectos\": 9820,\r\n    \"eficiencia\": \"Muy Alta\"\r\n  },\r\n  {\r\n    \"id\": 30,\r\n    \"nombre\": \"Monitoreo Inteligente 24/7\",\r\n    \"descripcion\": \"Control digital del sistema y visualización en tiempo real de la producción de energía.\",\r\n    \"icono\": \"solar-monitor\",\r\n    \"proyectos\": 15300,\r\n    \"eficiencia\": \"Máxima\"\r\n  },\r\n  {\r\n    \"id\": 40,\r\n    \"nombre\": \"Optimización de Consumo\",\r\n    \"descripcion\": \"Ajustes técnicos para maximizar eficiencia según las rutinas del cliente.\",\r\n    \"icono\": \"solar-optimization\",\r\n    \"proyectos\": 8750,\r\n    \"eficiencia\": \"Alta\"\r\n  },\r\n  {\r\n    \"id\": 50,\r\n    \"nombre\": \"Instalación Industrial\",\r\n    \"descripcion\": \"Proyectos de gran escala para empresas e industrias.\",\r\n    \"icono\": \"solar-factory\",\r\n    \"proyectos\": 4120,\r\n    \"eficiencia\": \"Muy Alta\"\r\n  },\r\n  {\r\n    \"id\": 60,\r\n    \"nombre\": \"Baterías y Almacenamiento\",\r\n    \"descripcion\": \"Implementación de baterías de litio para almacenar energía y usarla de noche.\",\r\n    \"icono\": \"solar-battery\",\r\n    \"proyectos\": 6930,\r\n    \"eficiencia\": \"Alta\"\r\n  },\r\n  {\r\n    \"id\": 70,\r\n    \"nombre\": \"Asesoría Energética\",\r\n    \"descripcion\": \"Estudio del consumo eléctrico para recomendar mejoras personalizadas.\",\r\n    \"icono\": \"solar-advice\",\r\n    \"proyectos\": 12020,\r\n    \"eficiencia\": \"Media\"\r\n  },\r\n  {\r\n    \"id\": 80,\r\n    \"nombre\": \"Reparación y Diagnóstico\",\r\n    \"descripcion\": \"Servicio técnico especializado para resolver fallas en paneles o inversores.\",\r\n    \"icono\": \"solar-repair\",\r\n    \"proyectos\": 5400,\r\n    \"eficiencia\": \"Alta\"\r\n  }\r\n]",
+          "body": "[\n  {\n    \"id\": 10,\n    \"nombre\": \"Instalación Residencial\",\n    \"descripcion\": \"Sistema solar completo para hogares, incluyendo evaluación, instalación y puesta en marcha.\",\n    \"icono\": \"solar-home\",\n    \"proyectos\": 12840,\n    \"eficiencia\": \"Alta\",\n    \"precio\": 5000\n  },\n  {\n    \"id\": 20,\n    \"nombre\": \"Mantenimiento Preventivo\",\n    \"descripcion\": \"Revisión periódica del sistema fotovoltaico para asegurar máximo rendimiento.\",\n    \"icono\": \"solar-wrench\",\n    \"proyectos\": 9820,\n    \"eficiencia\": \"Muy Alta\",\n    \"precio\": 1200\n  },\n  {\n    \"id\": 30,\n    \"nombre\": \"Monitoreo Inteligente 24/7\",\n    \"descripcion\": \"Control digital del sistema y visualización en tiempo real de la producción de energía.\",\n    \"icono\": \"solar-monitor\",\n    \"proyectos\": 15300,\n    \"eficiencia\": \"Máxima\",\n    \"precio\": 800\n  },\n  {\n    \"id\": 40,\n    \"nombre\": \"Optimización de Consumo\",\n    \"descripcion\": \"Ajustes técnicos para maximizar eficiencia según las rutinas del cliente.\",\n    \"icono\": \"solar-optimization\",\n    \"proyectos\": 8750,\n    \"eficiencia\": \"Alta\",\n    \"precio\": 1500\n  },\n  {\n    \"id\": 50,\n    \"nombre\": \"Instalación Industrial\",\n    \"descripcion\": \"Proyectos de gran escala para empresas e industrias.\",\n    \"icono\": \"solar-factory\",\n    \"proyectos\": 4120,\n    \"eficiencia\": \"Muy Alta\",\n    \"precio\": 25000\n  },\n  {\n    \"id\": 60,\n    \"nombre\": \"Baterías y Almacenamiento\",\n    \"descripcion\": \"Implementación de baterías de litio para almacenar energía y usarla de noche.\",\n    \"icono\": \"solar-battery\",\n    \"proyectos\": 6930,\n    \"eficiencia\": \"Alta\",\n    \"precio\": 8000\n  },\n  {\n    \"id\": 70,\n    \"nombre\": \"Asesoría Energética\",\n    \"descripcion\": \"Estudio del consumo eléctrico para recomendar mejoras personalizadas.\",\n    \"icono\": \"solar-advice\",\n    \"proyectos\": 12020,\n    \"eficiencia\": \"Media\",\n    \"precio\": 750\n  },\n  {\n    \"id\": 80,\n    \"nombre\": \"Reparación y Diagnóstico\",\n    \"descripcion\": \"Servicio técnico especializado para resolver fallas en paneles o inversores.\",\n    \"icono\": \"solar-repair\",\n    \"proyectos\": 5400,\n    \"eficiencia\": \"Alta\",\n    \"precio\": 1800\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "A successful response with a list of services.",
@@ -38,13 +38,25 @@
           "default": true,
           "crudKey": "id",
           "callbacks": []
-        },
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "9723db08-5557-4081-8bcc-def37a231de5",
+      "type": "http",
+      "documentation": "Get service by ID",
+      "method": "get",
+      "endpoint": "servicios/:id",
+      "responses": [
         {
-          "uuid": "7df9fb45-d410-4d4f-be5c-a7440ba97d58",
-          "body": "[\n  {\n    \"id\": 1,\n    \"nombre\": \"Instalación de Paneles Solares\",\n    \"descripcion\": \"Instalación completa de sistemas de paneles solares fotovoltaicos para hogares y empresas.\",\n    \"icono\": \"fa-solar-panel\",\n    \"proyectos\": 152,\n    \"eficiencia\": \"98%\"\n  },\n  {\n    \"id\": 2,\n    \"nombre\": \"Mantenimiento de Sistemas\",\n    \"descripcion\": \"Planes de mantenimiento preventivo y correctivo para asegurar la máxima capacidad de tu instalación.\",\n    \"icono\": \"fa-tools\",\n    \"proyectos\": 230,\n    \"eficiencia\": \"99.5%\"\n  },\n  {\n    \"id\": 3,\n    \"nombre\": \"Asesoría Energética\",\n    \"descripcion\": \"Te ayudamos a diseñar la solución solar que mejor se adapte a tus necesidades y presupuesto.\",\n    \"icono\": \"fa-lightbulb\",\n    \"proyectos\": 310,\n    \"eficiencia\": \"100%\"\n  }\n]",
+          "uuid": "eb4abe47-a356-466b-9f7c-98c08b45bb74",
+          "body": "{\n  \"id\": 10,\n  \"nombre\": \"Instalación Residencial\",\n  \"descripcion\": \"Sistema solar completo para hogares, incluyendo evaluación, instalación y puesta en marcha.\",\n  \"icono\": \"solar-home\",\n  \"proyectos\": 12840,\n  \"eficiencia\": \"Alta\",\n  \"precio\": 5000\n}",
           "latency": 0,
           "statusCode": 200,
-          "label": "servicios",
+          "label": "Service ID 10",
           "headers": [
             {
               "key": "Content-Type",
@@ -55,7 +67,239 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "10",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "054f37ac-4e60-47af-847b-b111f0d53895",
+          "body": "{\n  \"id\": 20,\n  \"nombre\": \"Mantenimiento Preventivo\",\n  \"descripcion\": \"Revisión periódica del sistema fotovoltaico para asegurar máximo rendimiento.\",\n  \"icono\": \"solar-wrench\",\n  \"proyectos\": 9820,\n  \"eficiencia\": \"Muy Alta\",\n  \"precio\": 1200\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 20",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "20",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "c1234567-89ab-cdef-0123-456789abcdef",
+          "body": "{\n  \"id\": 30,\n  \"nombre\": \"Monitoreo Inteligente 24/7\",\n  \"descripcion\": \"Control digital del sistema y visualización en tiempo real de la producción de energía.\",\n  \"icono\": \"solar-monitor\",\n  \"proyectos\": 15300,\n  \"eficiencia\": \"Máxima\",\n  \"precio\": 800\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 30",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "30",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d2345678-9abc-def0-1234-56789abcdef0",
+          "body": "{\n  \"id\": 40,\n  \"nombre\": \"Optimización de Consumo\",\n  \"descripcion\": \"Ajustes técnicos para maximizar eficiencia según las rutinas del cliente.\",\n  \"icono\": \"solar-optimization\",\n  \"proyectos\": 8750,\n  \"eficiencia\": \"Alta\",\n  \"precio\": 1500\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 40",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "40",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "e3456789-abcd-ef01-2345-6789abcdef01",
+          "body": "{\n  \"id\": 50,\n  \"nombre\": \"Instalación Industrial\",\n  \"descripcion\": \"Proyectos de gran escala para empresas e industrias.\",\n  \"icono\": \"solar-factory\",\n  \"proyectos\": 4120,\n  \"eficiencia\": \"Muy Alta\",\n  \"precio\": 25000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 50",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "50",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "f456789a-bcde-f012-3456-789abcdef012",
+          "body": "{\n  \"id\": 60,\n  \"nombre\": \"Baterías y Almacenamiento\",\n  \"descripcion\": \"Implementación de baterías de litio para almacenar energía y usarla de noche.\",\n  \"icono\": \"solar-battery\",\n  \"proyectos\": 6930,\n  \"eficiencia\": \"Alta\",\n  \"precio\": 8000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 60",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "60",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d004e18e-8018-4775-95cc-2b1fa82d4558",
+          "body": "{\n  \"id\": 70,\n  \"nombre\": \"Asesoría Energética\",\n  \"descripcion\": \"Estudio del consumo eléctrico para recomendar mejoras personalizadas.\",\n  \"icono\": \"solar-advice\",\n  \"proyectos\": 12020,\n  \"eficiencia\": \"Media\",\n  \"precio\": 750\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 70",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "70",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "8210c8eb-0106-4c2a-ae5e-23feea2d035a",
+          "body": "{\n  \"id\": 80,\n  \"nombre\": \"Reparación y Diagnóstico\",\n  \"descripcion\": \"Servicio técnico especializado para resolver fallas en paneles o inversores.\",\n  \"icono\": \"solar-repair\",\n  \"proyectos\": 5400,\n  \"eficiencia\": \"Alta\",\n  \"precio\": 1800\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Service ID 80",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "80",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -98,13 +342,25 @@
           "default": true,
           "crudKey": "id",
           "callbacks": []
-        },
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "b1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+      "type": "http",
+      "documentation": "Get plan by ID",
+      "method": "get",
+      "endpoint": "planes/:id",
+      "responses": [
         {
-          "uuid": "cb2dcb95-81cb-4a3c-968c-2927ab2e1bfe",
-          "body": "[\n  {\n    \"id\": 1,\n    \"nombre\": \"Plan Básico\",\n    \"precio\": \"Desde $2.500.000 CLP\",\n    \"caracteristicas\": [\n      \"Ideal para consumos bajos\",\n      \"Hasta 6 paneles solares\",\n      \"Inversor de 3kW\",\n      \"Monitoreo básico\",\n      \"Garantía de 10 años\"\n    ],\n    \"ventas\": 85\n  },\n  {\n    \"id\": 2,\n    \"nombre\": \"Plan Avanzado\",\n    \"precio\": \"Desde $4.500.000 CLP\",\n    \"caracteristicas\": [\n      \"Ideal para familias\",\n      \"Hasta 12 paneles solares\",\n      \"Inversor de 5kW\",\n      \"Monitoreo inteligente\",\n      \"Garantía de 15 años\"\n    ],\n    \"ventas\": 120\n  },\n  {\n    \"id\": 3,\n    \"nombre\": \"Plan Premium\",\n    \"precio\": \"Desde $7.000.000 CLP\",\n    \"caracteristicas\": [\n      \"Consumos altos y empresas\",\n      \"Más de 12 paneles solares\",\n      \"Inversor de 8kW o más\",\n      \"Sistema de baterías (opcional)\",\n      \"Garantía de 20 años\"\n    ],\n    \"ventas\": 45\n  }\n]",
+          "uuid": "c1c2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5e",
+          "body": "{\n  \"id\": 12,\n  \"nombre\": \"Plan Solar Hogar Básico\",\n  \"precio\": 8990000,\n  \"caracteristicas\": [\n    \"4 paneles solares monocristalinos\",\n    \"Inversor de 3 kW\",\n    \"Ahorro estimado del 40% en la cuenta de luz\",\n    \"Garantía de 10 años\"\n  ],\n  \"ventas\": 15830\n}",
           "latency": 0,
           "statusCode": 200,
-          "label": "planes",
+          "label": "Plan ID 12",
           "headers": [
             {
               "key": "Content-Type",
@@ -115,7 +371,47 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "12",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d1d2d3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5f",
+          "body": "{\n  \"id\": 27,\n  \"nombre\": \"Plan Solar Hogar Plus\",\n  \"precio\": 15490000,\n  \"caracteristicas\": [\n    \"8 paneles solares de alta eficiencia\",\n    \"Inversor híbrido de 5 kW\",\n    \"Batería de respaldo de 5 kWh\",\n    \"Ahorro estimado del 60%\"\n  ],\n  \"ventas\": 20340\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Plan ID 27",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "27",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -158,13 +454,25 @@
           "default": true,
           "crudKey": "id",
           "callbacks": []
-        },
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "9c3c6761-5889-45a2-adca-80d24c3c9810",
+      "type": "http",
+      "documentation": "Get vendor by ID",
+      "method": "get",
+      "endpoint": "vendedores/:id",
+      "responses": [
         {
-          "uuid": "7d2a5a39-02bf-4075-af29-63cadd4cf595",
-          "body": "[\n  {\n    \"id\": 1,\n    \"nombre\": \"Javiera González\",\n    \"metaVentas\": 50000000,\n    \"ventasActuales\": 42500000\n  },\n  {\n    \"id\": 2,\n    \"nombre\": \"Matías Rojas\",\n    \"metaVentas\": 40000000,\n    \"ventasActuales\": 31000000\n  },\n  {\n    \"id\": 3,\n    \"nombre\": \"Carla Núñez\",\n    \"metaVentas\": 60000000,\n    \"ventasActuales\": 58500000\n  },\n  {\n    \"id\": 4,\n    \"nombre\": \"Benjamín Soto\",\n    \"metaVentas\": 45000000,\n    \"ventasActuales\": 25000000\n  }\n]",
+          "uuid": "ef52e627-bf30-4594-9aaa-40b60ae8a449",
+          "body": "{\n  \"id\": 48291,\n  \"nombre\": \"Marcela Ríos\",\n  \"metaVentas\": 92000000,\n  \"ventasActuales\": 73840000\n}",
           "latency": 0,
           "statusCode": 200,
-          "label": "vendedores",
+          "label": "Vendor ID 48291",
           "headers": [
             {
               "key": "Content-Type",
@@ -175,7 +483,303 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "48291",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "60da00f5-9a4e-48b3-a041-95ad6812b7c5",
+          "body": "{\n  \"id\": 15734,\n  \"nombre\": \"Andrés Molina\",\n  \"metaVentas\": 58000000,\n  \"ventasActuales\": 41200000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 15734",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "15734",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "21be8e4b-5e99-4a52-a467-783f9f18d73d",
+          "body": "{\n  \"id\": 90312,\n  \"nombre\": \"Cristian Araya\",\n  \"metaVentas\": 77000000,\n  \"ventasActuales\": 76850000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 90312",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "90312",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "04a73a29-3650-49cd-9f23-232f868fdc47",
+          "body": "{\n  \"id\": 21489,\n  \"nombre\": \"Alexander González\",\n  \"metaVentas\": 65000000,\n  \"ventasActuales\": 53240000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 21489",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "21489",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "51997fb2-8e18-4d34-b482-90e32db4d40b",
+          "body": "{\n  \"id\": 62741,\n  \"nombre\": \"Paula Vergara\",\n  \"metaVentas\": 30000000,\n  \"ventasActuales\": 15400000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 62741",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "62741",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "b82cb008-8518-4d76-bb96-6b2c7fd5134c",
+          "body": "{\n  \"id\": 88944,\n  \"nombre\": \"Rodrigo Figueroa\",\n  \"metaVentas\": 48000000,\n  \"ventasActuales\": 44750000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 88944",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "88944",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "822cea3f-bb3b-4df2-b291-b2265ee55873",
+          "body": "{\n  \"id\": 33412,\n  \"nombre\": \"María Torres\",\n  \"metaVentas\": 81000000,\n  \"ventasActuales\": 59700000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 33412",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "33412",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "e5a81258-2c85-4e18-9caa-2047666c81b7",
+          "body": "{\n  \"id\": 77403,\n  \"nombre\": \"Javier Morales\",\n  \"metaVentas\": 64000000,\n  \"ventasActuales\": 32200000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 77403",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "77403",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "e0bf3371-e579-4a81-b680-4a54c3ce989c",
+          "body": "{\n  \"id\": 99510,\n  \"nombre\": \"Carolina Silva\",\n  \"metaVentas\": 50000000,\n  \"ventasActuales\": 49980000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 99510",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "99510",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "89b92f46-9478-4dfc-892a-8df0593c96de",
+          "body": "{\n  \"id\": 10822,\n  \"nombre\": \"Felipe Contreras\",\n  \"metaVentas\": 72000000,\n  \"ventasActuales\": 60500000\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Vendor ID 10822",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "10822",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
@@ -196,11 +800,23 @@
     },
     {
       "type": "route",
+      "uuid": "9723db08-5557-4081-8bcc-def37a231de5"
+    },
+    {
+      "type": "route",
       "uuid": "31eccaeb-4b8e-4828-a746-92cf8b02e9d7"
     },
     {
       "type": "route",
+      "uuid": "b1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d"
+    },
+    {
+      "type": "route",
       "uuid": "6a3db089-9c69-4e60-92e5-daa0561d0c21"
+    },
+    {
+      "type": "route",
+      "uuid": "9c3c6761-5889-45a2-adca-80d24c3c9810"
     }
   ],
   "proxyMode": false,

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const AdminServicios = () => {
   const [servicios, setServicios] = useState([]);
@@ -8,17 +10,13 @@ const AdminServicios = () => {
   useEffect(() => {
     const fetchServicios = async () => {
       try {
-        const response = await fetch('http://localhost:3001/servicios');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        if (Array.isArray(data)) {
-          setServicios(data);
+        const response = await axios.get('http://localhost:3001/servicios');
+        if (Array.isArray(response.data)) {
+          setServicios(response.data);
         } else {
           throw new Error("La data recibida no es un array");
         }
-      } catch (error){
+      } catch (error) {
         setError(error);
       } finally {
         setLoading(false);
@@ -62,7 +60,7 @@ const AdminServicios = () => {
                   <td>{servicio.nombre}</td>
                   <td>{servicio.descripcion}</td>
                   <td>
-                    <button className="btn btn-info btn-sm">Ver Detalle</button>
+                    <Link to={`/admin/servicios/${servicio.id}`} className="btn btn-info btn-sm">Ver Detalle</Link>
                   </td>
                 </tr>
               ))}

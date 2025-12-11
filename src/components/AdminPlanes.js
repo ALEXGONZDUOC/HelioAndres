@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const AdminPlanes = () => {
   const [planes, setPlanes] = useState([]);
@@ -8,13 +10,9 @@ const AdminPlanes = () => {
   useEffect(() => {
     const fetchPlanes = async () => {
       try {
-        const response = await fetch('http://localhost:3001/planes');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        if (Array.isArray(data)) {
-          setPlanes(data);
+        const response = await axios.get('http://localhost:3001/planes');
+        if (Array.isArray(response.data)) {
+          setPlanes(response.data);
         } else {
           throw new Error("La data recibida no es un array");
         }
@@ -61,9 +59,9 @@ const AdminPlanes = () => {
                 <tr key={plan.id}>
                   <td>{plan.id}</td>
                   <td>{plan.nombre}</td>
-                  <td>{plan.precio}</td>
+                  <td>${plan.precio.toLocaleString('es-CL')}</td>
                   <td>
-                    <button className="btn btn-info btn-sm">Ver Detalle</button>
+                    <Link to={`/admin/planes/${plan.id}`} className="btn btn-info btn-sm">Ver Detalle</Link>
                   </td>
                 </tr>
               ))}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -98,13 +100,9 @@ const AdminVendedores = () => {
   useEffect(() => {
     const fetchVendedores = async () => {
       try {
-        const response = await fetch('http://localhost:3001/vendedores');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        if (Array.isArray(data)) {
-          setVendedores(data);
+        const response = await axios.get('http://localhost:3001/vendedores');
+        if (Array.isArray(response.data)) {
+          setVendedores(response.data);
         } else {
           throw new Error("La data recibida no es un array");
         }
@@ -131,7 +129,9 @@ const AdminVendedores = () => {
       <div className="row g-4">
         {vendedores.map(vendedor => (
           <div key={vendedor.id} className="col-lg-6">
-            <VendedorCard vendedor={vendedor} />
+            <Link to={`/admin/vendedores/${vendedor.id}`} className="text-decoration-none">
+              <VendedorCard vendedor={vendedor} />
+            </Link>
           </div>
         ))}
       </div>
